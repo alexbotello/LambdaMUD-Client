@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
-import Splash from './components/Splash';
-import Login from './components/Login';
-import Register from './components/Register';
-import GameWindow from './components/GameWindow';
-import './App.css';
+import Splash from "./components/Splash";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import GameWindow from "./components/GameWindow";
+import "./App.css";
 
 class App extends Component {
   render() {
