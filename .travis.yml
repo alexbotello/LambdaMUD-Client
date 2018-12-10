@@ -6,9 +6,8 @@ node_js:
 before_install:
   - chmod +x scripts/test
 
-env:
-  - CLIENT_DIR=client
-  - SERVER_DIR=server
-
+cache:
+  directories:
+    - "node_modules"
 script:
   - scripts/test
