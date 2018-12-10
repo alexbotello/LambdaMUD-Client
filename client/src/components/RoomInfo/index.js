@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './index.css';
+import "./index.css";
 
 const RoomInfo = props => {
-  return(
+  return (
     <div className="Info">
       <h2 className="Room">{props.room}</h2>
       <h3 className="Desc">{props.desc}</h3>
     </div>
-  )
-}
+  );
+};
 
 export default RoomInfo;

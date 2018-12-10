@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import "./index.css";
 
 const Button = props => {
-  return(
+  return (
     <div className="Button" onClick={props.event}>
       {props.text}
     </div>
-    );
-}
+  );
+};
 
 export default Button;
