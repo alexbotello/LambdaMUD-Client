@@ -5,7 +5,7 @@
         "es6": true
     },
     "plugins": ["react", "prettier"],
-    "extends": ["plugin:prettier/recommended"],
+    "extends": ["plugin:prettier/recommended", "plugin:react/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
