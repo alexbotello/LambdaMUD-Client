@@ -3,6 +3,9 @@ language: node_js
 node_js:
   - "9"
 
+before_install:
+  - chmod +x scripts/test
+
 env:
   - CLIENT_DIR=client
   - SERVER_DIR=server
