@@ -11,4 +11,4 @@ env:
   - SERVER_DIR=server
 
 script:
-  - scripts/test CLIENT_DIR SERVER_DIR
+  - scripts/test

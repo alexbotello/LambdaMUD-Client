@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
-cd $1
+cd client
 npm install --dev
 npm run lint
 
-cd $2
+cd server
 npm install --dev
 npm run lint
