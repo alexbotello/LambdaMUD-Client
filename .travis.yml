@@ -6,8 +6,7 @@ node_js:
 before_install:
   - chmod +x scripts/test
 
-cache:
-  directories:
-    - "node_modules"
+cache: npm
+
 script:
   - scripts/test
