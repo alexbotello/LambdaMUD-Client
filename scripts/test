@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+cd $1
+npm install --dev
+npm run lint
+
+cd $2
+npm install --dev
+npm run lint

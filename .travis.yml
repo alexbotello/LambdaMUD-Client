@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - "9"
+
+env:
+  - CLIENT_DIR=client
+  - SERVER_DIR=server
+
+script:
+  - scripts/test CLIENT_DIR SERVER_DIR
