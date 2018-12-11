@@ -9,4 +9,14 @@ const Button = props => {
   );
 };
 
+class Buttons extends React.Component {
+  render() {
+    return (
+      <div>
+        button
+      </div>
+    )
+  }
+}
+
 export default Button;
