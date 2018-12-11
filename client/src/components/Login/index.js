@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
+import axios from "axios"
 
-import Button from "../Button";
-import "./index.css";
+import Button from "../Button"
+import "./index.css"
 
 class Login extends Component {
   state = {
@@ -11,34 +11,34 @@ class Login extends Component {
     password: "",
     error: false,
     redirect: false
-  };
+  }
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+    this.setState({ [event.target.name]: event.target.value })
+  }
   handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
     let data = {
       username: this.state.username,
       password: this.state.password
-    };
+    }
     axios
       .post("https://lambda-mud-alex.herokuapp.com/api/login", data)
       .then(response => {
-        const key = response.data["key"];
-        localStorage.setItem("token", key);
-        this.setState({ redirect: true });
+        const key = response.data["key"]
+        localStorage.setItem("token", key)
+        this.setState({ redirect: true })
       })
       .catch(error => {
         if (this.state.username === "" || this.state.password === "") {
-          this.setState({ error: true });
+          this.setState({ error: true })
         }
-      });
-    this.setState({ username: "", password: "" });
-  };
+      })
+    this.setState({ username: "", password: "" })
+  }
   componentDidMount() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token")
     if (token !== null) {
-      this.setState({ redirect: true });
+      this.setState({ redirect: true })
     }
   }
   render() {
@@ -69,8 +69,8 @@ class Login extends Component {
         <Button event={this.handleSubmit} text="Connect" />
         {this.state.redirect ? <Redirect to="/window" /> : null}
       </div>
-    );
+    )
   }
 }
 
-export default Login;
+export default Login

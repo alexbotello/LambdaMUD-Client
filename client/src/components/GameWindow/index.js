@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import Pusher from "pusher-js";
-import axios from "axios";
+import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
+import Pusher from "pusher-js"
+import axios from "axios"
 
-import RoomInfo from "../RoomInfo";
-import ChatBox from "../ChatBox";
-import CommandInput from "../CommandInput";
+import RoomInfo from "../RoomInfo"
+import ChatBox from "../ChatBox"
+import CommandInput from "../CommandInput"
 
-import "./index.css";
+import "./index.css"
 
 class GameWindow extends Component {
   state = {
@@ -19,15 +19,15 @@ class GameWindow extends Component {
     messages: [],
     loggedOn: true,
     token: localStorage.getItem("token")
-  };
+  }
 
   componentDidMount() {
-    const { token } = this.state;
+    const { token } = this.state
     if (token === null) {
-      this.setState({ loggedOn: false });
-      return;
+      this.setState({ loggedOn: false })
+      return
     }
-    Pusher.logToConsole = true;
+    Pusher.logToConsole = true
     axios
       .get("https://lambda-mud-alex.herokuapp.com/api/adv/init", {
         headers: {
@@ -41,39 +41,39 @@ class GameWindow extends Component {
           room: response.data["title"],
           desc: response.data["description"],
           players: response.data["players"]
-        });
-        this.loadGreetingMessage();
+        })
+        this.loadGreetingMessage()
         const pusher = new Pusher("970731c7cf498dc1ba5f", {
           cluster: "us2",
           forceTLS: true
-        });
-        const channel = pusher.subscribe(`p-channel-${this.state.uuid}`);
+        })
+        const channel = pusher.subscribe(`p-channel-${this.state.uuid}`)
         channel.bind("broadcast", response => {
-          this.streamPusherMessage(response.message);
-        });
+          this.streamPusherMessage(response.message)
+        })
       })
       .catch(error => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   }
 
   updateMessages = data => {
-    const { messages } = this.state;
+    const { messages } = this.state
     let newMessage = {
       msg: data["message"],
       style: { color: "red" }
-    };
-    let newMessages = [...messages];
-    newMessages.push(newMessage);
+    }
+    let newMessages = [...messages]
+    newMessages.push(newMessage)
     this.setState({
       messages: newMessages
-    });
-  };
+    })
+  }
 
   moveRooms = data => {
-    const { messages } = this.state;
+    const { messages } = this.state
     if (data.players.length === 0) {
-      data["players"] = "None";
+      data["players"] = "None"
     }
     let newMessages = [
       {
@@ -84,21 +84,21 @@ class GameWindow extends Component {
         msg: `Current players in the room: ${data.players}`,
         style: { color: "magenta" }
       }
-    ];
+    ]
     newMessages.forEach(item => {
-      messages.push(item);
-    });
+      messages.push(item)
+    })
     this.setState({
       name: data["name"],
       room: data["title"],
       desc: data["description"],
       players: data["players"],
       messages
-    });
-  };
+    })
+  }
 
   loadGreetingMessage = () => {
-    const { room, messages, players } = this.state;
+    const { room, messages, players } = this.state
     let newMessages = [
       {
         msg: `You have entered ${room}.`,
@@ -108,31 +108,31 @@ class GameWindow extends Component {
         msg: `Current players in the room: ${players}`,
         style: { color: "magenta" }
       }
-    ];
+    ]
     newMessages.forEach(item => {
-      messages.push(item);
-    });
-    this.setState({ messages });
-  };
+      messages.push(item)
+    })
+    this.setState({ messages })
+  }
 
   streamPusherMessage = msg => {
-    const { messages } = this.state;
+    const { messages } = this.state
     let newMessage = {
       msg,
       style: { color: "navy" }
-    };
-    let newMessages = [...messages];
-    newMessages.push(newMessage);
-    this.setState({ messages: newMessages });
-  };
+    }
+    let newMessages = [...messages]
+    newMessages.push(newMessage)
+    this.setState({ messages: newMessages })
+  }
 
   logOut = () => {
-    localStorage.clear();
-    this.setState({ loggedOn: false });
-  };
+    localStorage.clear()
+    this.setState({ loggedOn: false })
+  }
 
   render() {
-    const { messages, room, desc } = this.state;
+    const { messages, room, desc } = this.state
     return (
       <div>
         <h1 style={{ color: "#ffff66" }}>Lambda MUD Project</h1>
@@ -149,8 +149,8 @@ class GameWindow extends Component {
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default GameWindow;
+export default GameWindow

@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import "./index.css";
+import "./index.css"
 
 const RoomInfo = props => {
   return (
@@ -8,7 +8,7 @@ const RoomInfo = props => {
       <h2 className="Room">{props.room}</h2>
       <h3 className="Desc">{props.desc}</h3>
     </div>
-  );
-};
+  )
+}
 
-export default RoomInfo;
+export default RoomInfo

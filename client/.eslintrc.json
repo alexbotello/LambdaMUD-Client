@@ -20,6 +20,6 @@
     "react/no-unescaped-entities": 0,
     "react/prefer-es6-class": "error",
     "react/prefer-stateless-function": "error",
-    "semi": 2
+    "semi": "error"
   }
 }

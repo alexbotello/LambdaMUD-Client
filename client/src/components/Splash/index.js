@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
-import Button from "../Button";
-import "./index.css";
+import Button from "../Button"
+import "./index.css"
 
 const Splash = () => {
   return (
@@ -17,7 +17,7 @@ const Splash = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Splash;
+export default Splash
