@@ -18,13 +18,5 @@
         "prettier/prettier": "error",
         "react/prop-types": 0,
         "react/no-unescaped-entities": 0
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.{js,json,css,md}": ["prettier --write", "git add"]
     }
 }
