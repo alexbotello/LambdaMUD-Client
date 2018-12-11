@@ -11,7 +11,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "semi": 2,
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "prettier/semi": "false"
     }
 }
