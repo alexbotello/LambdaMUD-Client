@@ -15,9 +15,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "semi": 0,
     "prettier/prettier": "error",
-    "prettier/semi": "false",
     "react/prop-types": 0,
     "react/no-unescaped-entities": 0,
     "react/prefer-es6-class": "error",
