@@ -9,12 +9,8 @@ const Button = props => {
   );
 };
 
-const Buttons = (props) => {
-    return (
-      <div>
-        button
-      </div>
-    )
-}
+const Buttons = props => {
+  return <div>button</div>;
+};
 
 export default Button;
