@@ -77,4 +77,10 @@ class CommandInput extends Component {
   }
 }
 
+class Input extends Component {
+  render() {
+    return <div>Hello moto!</div>;
+  }
+}
+
 export default CommandInput;
