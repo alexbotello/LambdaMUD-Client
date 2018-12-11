@@ -9,8 +9,7 @@ const Button = props => {
   );
 };
 
-class Buttons extends React.Component {
-  render() {
+const Buttons = (props) => {
     return (
       <div>
         button
