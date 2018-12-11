@@ -15,11 +15,11 @@
     "sourceType": "module"
   },
   "rules": {
+    "eslint/semi": "error",
     "prettier/prettier": "error",
     "react/prop-types": 0,
     "react/no-unescaped-entities": 0,
     "react/prefer-es6-class": "error",
-    "react/prefer-stateless-function": "error",
-    "semi": "error"
+    "react/prefer-stateless-function": "error"
   }
 }
