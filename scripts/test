@@ -1,10 +1,10 @@
 #!/bin/sh -e
 
 cd client
-npm install
-npm run lint
+yarn
+yarn run lint
 
 cd ..
 cd server
-npm install
-npm run lint
+yarn
+yarn run lint
