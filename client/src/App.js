@@ -17,11 +17,4 @@ const App = () => {
     </div>
   )
 }
-
-class pop extends Component {
-  render() {
-    ;<div>hello</div>
-  }
-}
-
 export default App
