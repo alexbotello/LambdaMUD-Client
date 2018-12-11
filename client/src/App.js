@@ -18,4 +18,10 @@ const App = () => {
   )
 }
 
+class pop extends Component {
+  render() {
+    ;<div>hello</div>
+  }
+}
+
 export default App
