@@ -1,10 +1,10 @@
 #!/bin/sh -e
 
 cd client
-npm install --dev
+npm install --only=dev
 npm run lint
 
 cd ..
 cd server
-npm install --dev
+npm install --only=dev
 npm run lint
