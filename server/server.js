@@ -1,6 +1,6 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 let app = express();
 
@@ -12,6 +12,4 @@ app.listen(5005, () => {
   console.log("Server listening on port 5005");
 });
 
-module.exports = {
-  app
-};
+export default app;

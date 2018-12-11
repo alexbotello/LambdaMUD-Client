@@ -11,14 +11,28 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-eslint": "^10.0.1",
     "cors": "^2.7.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "express": "^4.15.2",
-    "morgan": "^1.8.1",
-    "prettier": "^1.15.3"
+    "babel-eslint": "^10.0.1"
   },
-  "devDependencies": {}
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
