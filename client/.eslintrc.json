@@ -4,7 +4,7 @@
         "commonjs": true,
         "es6": true
     },
-    "plugins": ["react", "prettier"],
+    "plugins": ["prettier", "react"],
     "extends": ["plugin:prettier/recommended", "plugin:react/recommended"],
     "parser": "babel-eslint",
     "parserOptions": {
@@ -18,7 +18,7 @@
         "prettier/prettier": "error",
         "react/prop-types": 0,
         "react/no-unescaped-entities": 0,
-        "react/prefer-es6-class": 1,
-        "react/prefer-stateless-function": 1
+        "react/prefer-es6-class": "error",
+        "react/prefer-stateless-function": "error"
     }
 }
