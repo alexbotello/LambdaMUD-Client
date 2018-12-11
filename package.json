@@ -5,11 +5,6 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3"
   },
-  "scripts": {
-    "precommit:client": "cd client && yarn run lint",
-    "precommit:server": "cd server && yarn run lint",
-    "precommit": "yarn run precommit:client && yarn run precommit:server"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

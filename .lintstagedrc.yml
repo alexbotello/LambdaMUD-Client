@@ -1,7 +1,0 @@
-linters:
-  client/**/*.js:
-    - prettier --write
-    - git add
-  server/**/*.js:
-    - prettier --write
-    - git add
