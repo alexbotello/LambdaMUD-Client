@@ -1,6 +1,6 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 let app = express();
 
@@ -10,6 +10,7 @@ app.use(bodyParser());
 
 app.listen(5005, () => {
   console.log("Server listening on port 5005");
+  console.log("lets test if this linter commit works");
 });
 
 export default app;
