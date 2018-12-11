@@ -28,7 +28,7 @@ class Login extends Component {
         localStorage.setItem("token", key)
         this.setState({ redirect: true })
       })
-      .catch(error => {
+      .catch(() => {
         if (this.state.username === "" || this.state.password === "") {
           this.setState({ error: true })
         }
